@@ -61,7 +61,7 @@
  */
 
 const {AppRegistry} = require('react-native');
-var HelloApp = require('./Zhihu');
+var HelloApp = require('./App');
 
 AppRegistry.registerComponent('Hello', () => HelloApp);
 
