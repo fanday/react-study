@@ -63,6 +63,7 @@ var Two = React.createClass({
 
         var titleConfig = {
             title: 'Hello, world',
+            tintColor:'red'
         };
 
         return (
