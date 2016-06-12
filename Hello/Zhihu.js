@@ -6,6 +6,7 @@ var Text = require('Text');
 var Image = require('Image');
 var StyleSheet = require('StyleSheet');
 var TouchableHighlight = require('TouchableHighlight');
+var Splash = require('./Splash');
 
 var count = 0;
 
@@ -40,14 +41,14 @@ var Zhihu = React.createClass({
     },
     render:function () {
         return(
-        <TouchableHighlight
-            onPressIn={this._onPressIn}
-            onPressOut={this._onPressOut}
-            style={styles.touchable}>
-            <Image style={styles.cover} source={{uri:this.state.imageUrl}}>
-                <Text style={styles.author}>©{this.state.author}</Text>
-            </Image>
-        </TouchableHighlight>
+        // <TouchableHighlight
+        //     onPressIn={this._onPressIn}
+        //     onPressOut={this._onPressOut}
+        //     style={styles.touchable}>
+        //     <Splash imageUrl={this.state.imageUrl} author={this.state.author}></Splash>
+        // </TouchableHighlight>
+                <Splash imageUrl={this.state.imageUrl} author={this.state.author}></Splash>
+
             );
     }
 });
