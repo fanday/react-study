@@ -8,7 +8,8 @@ var StyleSheet = require('StyleSheet');
 //var TouchableHighlight = require('TouchableHighlight');
 var Splash = require('./Splash');
 var Provider = require('react-redux').Provider;
-var store = require('./store');
+var store = require('./store').store;
+var getInfoNow = require('./store').getInfoNow;
 var Actions = require('./SplashActions');
 var connect = require('react-redux').connect;
 var bindActionCreators = require('redux').bindActionCreators;
@@ -16,6 +17,9 @@ var bindActionCreators = require('redux').bindActionCreators;
 var count = 0;
 
 var SplashApp = React.createClass({
+    componentDidMount:function () {
+      this.props.dispatch(getInfoNow());//加载时刷新数据
+    },
     render:function () {
         var dispatch = this.props.dispatch;
         var info = this.props.info;
