@@ -18,11 +18,13 @@ var SideMenu = require('react-native-side-menu');
 const window = Dimensions.get('window');
 const uri = 'http://pickaface.net/includes/themes/clean/img/slide2.png';
 
+//布局参考:https://segmentfault.com/a/1190000002658374
+
 
 var styles = StyleSheet.create({
   button: {
     position: 'absolute',
-    top: 20,
+    top: 0,
     padding: 10,
   },
   caption: {
@@ -72,6 +74,20 @@ var styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '300',
     paddingTop: 5,
+  },
+  naviBar:{
+    height:44,
+    width: window.width,
+    backgroundColor:'red',
+    position: 'absolute',
+    top: 20,
+    padding: 0,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  navTitle:{
+    alignSelf:'center',
+    fontSize:20,
   },
 });
 
@@ -134,10 +150,14 @@ var Basic = React.createClass( {
               Current selected menu item is: {this.state.selectedItem}
             </Text>
           </View>
+          <View style={styles.naviBar}>
             <Button style={styles.button} onPress={() => this.toggle()}>
               <Image
                   source={{ uri: 'http://i.imgur.com/vKRaKDX.png', width: 32, height: 32, }} />
             </Button>
+            <Text style={styles.navTitle}>我的首页</Text>
+          </View>
+
 
         </SideMenu>
     );
